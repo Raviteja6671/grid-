@@ -1,0 +1,243 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom CSS Grid Gallery</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(5, 200px);
+      gap: 10px;
+      grid-template-areas:
+        "img1 img2 img3 img3"
+        "img4 img2 img5 img6"
+        "img7 img7 img8 img6"
+        "img9 img10 img11 img12"
+        "img13 img14 img14 img12";
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 8px;
+    }
+
+    .img1  { grid-area: img1; }
+    .img2  { grid-area: img2; }
+    .img3  { grid-area: img3; }
+    .img4  { grid-area: img4; }
+    .img5  { grid-area: img5; }
+    .img6  { grid-area: img6; }
+    .img7  { grid-area: img7; }
+    .img8  { grid-area: img8; }
+    .img9  { grid-area: img9; }
+    .img10 { grid-area: img10; }
+    .img11 { grid-area: img11; }
+    .img12 { grid-area: img12; }
+    .img13 { grid-area: img13; }
+    .img14 { grid-area: img14; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas: unset;
+      }
+      .gallery img {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="gallery">
+    <img src="https://picsum.photos/id/1011/800/600" alt="Gallery 1" class="img1">
+    <img src="https://picsum.photos/id/1012/800/600" alt="Gallery 2" class="img2">
+    <img src="https://picsum.photos/id/1013/800/600" alt="Gallery 3" class="img3">
+    <img src="https://picsum.photos/id/1014/800/600" alt="Gallery 4" class="img4">
+    <img src="https://picsum.photos/id/1015/800/600" alt="Gallery 5" class="img5">
+    <img src="https://picsum.photos/id/1016/800/600" alt="Gallery 6" class="img6">
+    <img src="https://picsum.photos/id/1018/800/600" alt="Gallery 7" class="img7">
+    <img src="https://picsum.photos/id/1020/800/600" alt="Gallery 8" class="img8">
+    <img src="https://picsum.photos/id/1024/800/600" alt="Gallery 9" class="img9">
+    <img src="https://picsum.photos/id/1025/800/600" alt="Gallery 10" class="img10">
+    <img src="https://picsum.photos/id/1027/800/600" alt="Gallery 11" class="img11">
+    <img src="https://picsum.photos/id/1031/800/600" alt="Gallery 12" class="img12">
+    <img src="https://picsum.photos/id/1032/800/600" alt="Gallery 13" class="img13">
+    <img src="https://picsum.photos/id/1033/800/600" alt="Gallery 14" class="img14">
+  </div>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive CSS Grid Gallery with Sidebar</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      background: #f1c40f;
+      color: white;
+      padding: 40px 20px;
+      width: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .sidebar h1 {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    .sidebar p {
+      font-size: 22px;
+      line-height: 1.6;
+      font-weight: bold;
+    }
+
+    /* Gallery Wrapper */
+    .gallery-container {
+      flex: 1;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    /* CSS Grid Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(5, 200px);
+      gap: 15px;
+      grid-template-areas:
+        "img1 img2 img3 img3"
+        "img4 img2 img5 img6"
+        "img7 img7 img8 img6"
+        "img9 img10 img11 img12"
+        "img13 img14 img14 img12";
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    /* Grid Areas */
+    .img1  { grid-area: img1; }
+    .img2  { grid-area: img2; }
+    .img3  { grid-area: img3; }
+    .img4  { grid-area: img4; }
+    .img5  { grid-area: img5; }
+    .img6  { grid-area: img6; }
+    .img7  { grid-area: img7; }
+    .img8  { grid-area: img8; }
+    .img9  { grid-area: img9; }
+    .img10 { grid-area: img10; }
+    .img11 { grid-area: img11; }
+    .img12 { grid-area: img12; }
+    .img13 { grid-area: img13; }
+    .img14 { grid-area: img14; }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      body {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        height: auto;
+        align-items: center;
+        text-align: center;
+      }
+
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 200px;
+        grid-template-areas: unset; /* switch to normal grid flow */
+      }
+    }
+
+    @media (max-width: 600px) {
+      .gallery {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 250px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h1>🧡🤍💚</h1>
+    <p>HIGHER<br>OFFICIALS OF<br>INDIA</p>
+  </div>
+
+  <!-- Gallery  https://files.prokerala.com/news/photos/imgs/800/jharkhand-governor-cp-radhakrishnan-1568549.jpg -->
+  <div class="gallery-container">
+    <div class="gallery">
+      <img src="https://img.theweek.in/content/dam/week/news/india/images/2024/1/26/murmu-speech-pti.jpg" alt="Gallery 1" class="img1">
+      <img src="https://data1.ibtimes.co.in/en/full/781152/prime-minister-narendra-modi.jpg?h=450&l=50&t=40" alt="Gallery 2" class="img2">
+      <img src="https://www.sarkaritel.com/wp-content/uploads/2025/07/jagdeep-dhankar-960x729.jpg" alt="Gallery 3" class="img3">
+      <img src="https://st.adda247.com/https://currentaffairs.adda247.com/wp-content/uploads/multisite/sites/5/2022/11/09100537/lhl7smio_justice-dy-chandrachud-650_625x300_04_October_21.jpg" alt="Gallery 4" class="img4">
+      <img src="https://www.financialexpress.com/wp-content/uploads/2024/11/Amit-Shah-1.png" alt="Gallery 5" class="img5">
+      <img src="https://wallpaperaccess.com/full/9071567.jpg" alt="Gallery 6" class="img6">
+      <img src="https://media.assettype.com/freepressjournal/2021-02/83ae2f17-e901-41c3-b270-b992252900fa/s_jaishankar_pti.jpg?width=1200" alt="Gallery 7" class="img7">
+      <img src="https://assets.shortpedia.com/uploads/2021/07/14/1626254354.jpg" alt="Gallery 8" class="img8">
+      <img src="https://indianexpress.com/wp-content/uploads/2024/06/General-Upendra-Dwivedi.jpg" alt="Gallery 9" class="img9">
+      <img src="https://assets.telegraphindia.com/telegraph/2024/Jan/1704865927_hari-kumar.jpg" alt="Gallery 10" class="img10">
+      <img src="https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2024/09/amar-preet-singh-1726909128.jpg" alt="Gallery 11" class="img11">
+      <img src="https://cdn.britannica.com/66/256466-050-E898C4D3/former-indian-army-chief-field-marshal-sam-manekshaw.jpg" alt="Gallery 12" class="img12">
+      <img src="https://www.thestatesman.com/wp-content/uploads/2023/09/Untitled-design-2023-09-09T204831.506.jpg" alt="Gallery 13" class="img13">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg_VgqNgpHl94T8Z95jVpo5MF7gpQfUx86tQ96SWUvRZrge7acFk4sT6rU6Sf2V-5v5U8drGJ67roMRJ-hRuTGGu_X5KvpPvgR1m3JkpDhaBhwuFNJQa2enpjQVYNFSqu1SaDf2ti9JhtQjtI37v9ptY4IbmkvjmVl9-zZK7-O3Zw391k5OWNDcGMSSfUg/s1620/RBI%20New%20Governor.jpg" alt="Gallery 14" class="img14">
+    </div>
+  </div>
+
+</body>
+</html>
